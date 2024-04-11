@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        
+        body {
+            border: none;
+        }
+        
+        .Container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 0%;
+        }
+        
+        .Social.Media ul {
+            padding-left: 20px;
+        }
+        
+        .Social.Media ul li {
+            list-style-type: disc;
+        }
+        
+        .Logo {
+            border: 1px solid black;
+            width: 10%;
+            float: left;
+        }
+        
+        .Img.responsive {
+            width: 100%;
+        }
+        
+        .Img-Curve {
+            border-radius: 10px;
+        }
+        
+        .Text.Align {
+            text-align: right;
+        }
+        
+        .Menu ul {
+            list-style-type: none;
+        }
+        
+        .Menu ul li {
+            display: inline;
+            padding: 1%;
+            font-weight: bold;
+        }
+        
+        .Menu {
+            line-height: 60px;
+        }
+        
+        a {
+            color: #ff6b81;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #4750ff;
+            transform: translateY(-7px);
+        }
+        
+        .Clear.Fix {
+            clear: both;
+            float: none;
+        }
+        
+        .Text-Center {
+            text-align: center;
+        }
+        
+        .Button {
+            padding: 1%;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        
+        .Button-Primary {
+            background-color: #ff6b81;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        
+        .Button-Primary:Hover {
+            background-color: #4750ff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        h2 {
+            color: #2f3542;
+            font-size: 2rem;
+            margin-bottom: 2%;
+        }
+        
+        .Social.Media {
+            list-style-type: none;
+        }
+        
+        .Social.Media ul li {
+            display: inline;
+            padding: 1px;
+        }
+        
+        .Social.Media ul li a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+            /* Added transition property */
+        }
+        
+        .Social.Media ul li a img:hover {
+            transform: scale(1.1);
+            /* Added hover effect to scale up the social media logo */
+        }
+        
+        .Footer a {
+            margin-right: 10px;
+        }
+        
+        .Footer a:hover {
+            transform: translateY(-7px);
+        }
+        
+        .Food-Box-Menu {
+            width: 31%;
+            /* Adjust width to fit two images inline */
+            display: inline-block;
+            margin: 10px;
+            /* Add margin between boxes */
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .Food-Menu-Image {
+            width: 267px;
+            max-width: 267px;
+            /* Set maximum width for consistent size */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .Food-Menu-Image img {
+            width: 267px;
+            height: 189px;
+            transition: transform 0.3s ease-in-out;
+            display: block;
+        }
+        
+        .Food-Menu-Desc {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(200, 200, 200, 0.8);
+            /* Light gray background color */
+            padding: 10px;
+            box-sizing: border-box;
+            transition: bottom 0.3s ease-in-out;
+        }
+        
+        .Food-Box-Menu:hover .Food-Menu-Desc {
+            bottom: 0;
+        }
+        
+        .Food-Menu-Desc h4,
+        .Food-Menu-Desc p {
+            margin: 5px 0;
+        }
+        
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #ff6b81;
+            color: whitesmoke;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .btn:hover {
+            background-color: #4750ff;
+            transform: translateY(-3px);
+        }
+        
+        @media only screen and (max-width:768px) {
+            .Logo {
+                width: 80%;
+                float: none;
+                margin: 1.5% auto;
+            }
+            .Menu ul {
+                text-align: center;
+            }
+            .Food-Search input[type="search"] {
+                width: 90%;
+                padding: 2%;
+                margin-bottom: 5%;
+            }
+            .Food-Box-Menu {
+                width: calc(100% - 20px);
+                margin: 10px auto;
+            }
+        }
+        /* New styles for the hover area */
+        
+        .Food-Menu-Image:hover .Food-Menu-Desc {
+            bottom: 0;
+        }
+        
+        .Food-Menu-Desc {
+            max-width: 300px;
+            /* Same as the dish image */
+        }
+    </style>
+</head>
+
+
+<body>
+    <!--Navigation Section Starts Here-->
+    <section class="Navigation Bar">
+        <div class="Container">
+            <div class="Logo">
+                <img src="C:\Restaurant\Images\logo.png" alt="Restaurant Logo" class="Img responsive">
+            </div>
+
+            <div class="Menu Text Align">
+                <ul>
+                    <li>
+                        <a href="Home.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="Foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="Clear Fix"></div>
+        </div>
+    </section>
+    <!--Navigation Section Ends Here-->
+
+    <!--Food Search Section Starts Here-->
+    <section class="Food-Search Text-Center">
+        <div class="Container ">
+        </div>
+    </section>
+
+
+    <!-- fOOD MEnu Section Starts Here -->
+    <section class="Food-Menu">
+        <div class="Container">
+
+            <div class="Food-Box-Menu">
+                <div class="Food-Menu-Image">
+                    <div class="Image-Box">
+                        <img src="C:\Restaurant\Images\Soup.Non\Chicken Soup.jpg" alt="Chicken Soup" class="Img responsive Img-Curve">
+                    </div>
+                    <div class="Food-Menu-Desc">
+                        <h4>Chicken Soup</h4>
+                        <p class="Food-Price">₹180</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <div class="Food-Box-Menu">
+                <div class="Food-Menu-Image">
+                    <div class="Image-Box">
+                        <img src="C:\Restaurant\Images\Soup.Non\Mutton Soup.jpeg" alt="Mutton Soup" class="Img responsive Img-Curve">
+                    </div>
+                    <div class="Food-Menu-Desc">
+                        <h4>Mutton Soup</h4>
+                        <p class="Food-Price">₹220</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <div class="Food-Box-Menu">
+                <div class="Food-Menu-Image">
+                    <div class="Image-Box">
+                        <img src="C:\Restaurant\Images\Soup.Non\Prawn Soup.jpeg" alt="Prawn Soup" class="Img responsive Img-Curve">
+                    </div>
+                    <div class="Food-Menu-Desc">
+                        <h4>Prawn Soup</h4>
+                        <p class="Food-Price">₹250</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <div class="Food-Box-Menu">
+                <div class="Food-Menu-Image">
+                    <div class="Image-Box">
+                        <img src="Images/Soup.Non/Fish Soup.jpeg" alt="Fish Soup" class="Img responsive Img-Curve">
+                    </div>
+                    <div class="Food-Menu-Desc">
+                        <h4>Fish Soup</h4>
+                        <p class="Food-Price">₹210</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <div class="Food-Box-Menu">
+                <div class="Food-Menu-Image">
+                    <div class="Image-Box">
+                        <img src="C:\Restaurant\Images\Soup.Non\Crab Soup.jpeg" alt="Crab Soup" class="Img responsive Img-Curve">
+                    </div>
+                    <div class="Food-Menu-Desc">
+                        <h4>Crab Soup</h4>
+                        <p class="Food-Price">₹260</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <div class="Food-Box-Menu">
+                <div class="Food-Menu-Image">
+                    <div class="Image-Box">
+                        <img src="CC:\Restaurant\Images\Soup.Non\Egg Drop Soup.jpeg" alt="Egg Drop Soup" class="Img responsive Img-Curve">
+                    </div>
+                    <div class="Food-Menu-Desc">
+                        <h4>Egg Drop Soup</h4>
+                        <p class="Food-Price">₹160</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+    </section>
+    <!-- fOOD Menu Section Ends Here -->
+
+    <!--Social Media Section Starts Here-->
+    <section class="Social Media">
+        <div class="Container Text-Center">
+            <ul>
+                <li>
+                    <a href="#"><img src="Images\Facebook.png" class="Img-Curve"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="Images\Instagram.png " class="Img-Curve"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="Images\Threads.png" class="Img-Curve"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--Social Media Section Ends Here-->
+
+    <!--Footer Section Starts Here-->
+    <section class="Footer">
+        <div class="Container Text-Center">
+            <p>All rights reserved. Designed by <a href="#">Akshith Shetty</a><a href="#">G Rohan</a><a href="#">Keshav Nayak</a></p>
+        </div>
+    </section>
+    <!--Footer Section Ends Here-->
+
+</body>
+
+</html>

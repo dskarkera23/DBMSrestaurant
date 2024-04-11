@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Important to make website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .Container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 0%;
+        }
+        
+        .Social.Media ul {
+            padding-left: 20px;
+        }
+        
+        .Social.Media ul li {
+            list-style-type: disc;
+        }
+        
+        .Logo {
+            border: 1px solid black;
+            width: 10%;
+            float: left;
+        }
+        
+        .Img.responsive {
+            width: 100%;
+        }
+        
+        .Img-Curve {
+            border-radius: 10px;
+            width: 100%;
+            height: 0%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+            /* Added transition property */
+        }
+        
+        .Img-Curve:hover {
+            transform: scale(1.1);
+            /* Added hover effect to scale up the image */
+        }
+        
+        .Text.Align {
+            text-align: right;
+        }
+        
+        .Menu ul {
+            list-style-type: none;
+        }
+        
+        .Menu ul li {
+            display: inline;
+            padding: 1%;
+            font-weight: bold;
+        }
+        
+        .Menu {
+            line-height: 60px;
+        }
+        
+        a {
+            color: #ff6b81;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #4750ff;
+            transform: translateY(-7px);
+        }
+        
+        .Clear.Fix {
+            clear: both;
+            float: none;
+        }
+        
+        .Food-Search {
+            background-image: url(./Images/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 7% 0;
+        }
+        
+        .Food-Search input[type='search'] {
+            width: 50%;
+            padding: 1%;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .Text-Center {
+            text-align: center;
+        }
+        
+        .Button {
+            padding: 1%;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        
+        .Button-Primary {
+            background-color: #ff6b81;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        
+        .Button-Primary:hover {
+            background-color: #4750ff;
+            color: white;
+        }
+        
+        h2 {
+            color: #2f3542;
+            font-size: 2rem;
+            margin-bottom: 2%;
+        }
+        
+        h4 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .Category {
+            padding: 5% 0;
+            border: 1px;
+            text-align: center;
+        }
+        
+        .Box-Curve {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            /* Added transition property */
+        }
+        
+        .Box-Curve:hover {
+            transform: scale(1.1);
+            /* Added hover effect to scale up the image */
+        }
+        
+        .Box-1,
+        .Box-2,
+        .Box-3 {
+            border: 2px solid black;
+            width: calc(33.33% - 20px);
+            display: inline-block;
+            margin: 5px;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        
+        .Box-1 img,
+        .Box-2 img,
+        .Box-3 img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .Food-Menu {
+            border: 1px solid black;
+        }
+        
+        .Social.Media {
+            list-style-type: none;
+        }
+        
+        .Social.Media ul li {
+            display: inline;
+            padding: 1px;
+        }
+        
+        .Social.Media ul li a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+            /* Added transition property */
+        }
+        
+        .Social.Media ul li a img:hover {
+            transform: scale(1.1);
+            /* Added hover effect to scale up the social media logo */
+        }
+        
+        .Footer a {
+            margin-right: 10px;
+        }
+        
+        .Footer a:hover {
+            transform: translateY(-7px);
+        }
+        /* CSS for Food Menu */
+        
+        .Food-Menu-Box {
+            width: calc(30%);
+            margin: 0 10px;
+            display: inline-block;
+            box-sizing: border-box;
+            text-align: center;
+            vertical-align: top;
+        }
+        
+        .Food-Menu-Img {
+            width: 80%;
+            float: none;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        
+        .Food-Menu-Desc {
+            width: 100%;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .Food-Price {
+            font-size: 1.2rem;
+            margin: 2% 0;
+        }
+        
+        .Food-Detail {
+            font-size: 1rem;
+            color: #747d8c;
+        }
+        
+        @media only screen and (max-width:768px) {
+            .Logo {
+                width: 80%;
+                float: none;
+                margin: 1.5% auto;
+            }
+            .Menu ul {
+                text-align: center;
+            }
+            .Food-Search input[type="search"] {
+                width: 90%;
+                padding: 2%;
+                margin-bottom: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navigation Section Starts Here-->
+    <section class="Navigation Bar">
+        <div class="Container">
+            <div class="Logo">
+                <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\logo.png" alt="Restaurant Logo" class="Img responsive">
+            </div>
+
+            <div class="Menu Text Align">
+                <ul>
+                    <li>
+                        <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Home.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="Clear Fix"></div>
+        </div>
+    </section>
+    <!--Navigation Section Ends Here-->
+
+    <!--Food Search Section Starts Here-->
+    <section class="Food-Search Text-Center">
+        <div class="Container ">
+        </div>
+    </section>
+    <!--Food Search Section Ends Here-->
+
+    <!-- fOOD MEnu Section Starts Here -->
+    <section class="">
+        <div class="Container">
+            <h2 class="Text"></h2>
+
+            <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Non-Veg\Salad.html">
+                <div class="Food-Menu-Box">
+                    <div class="Box-1 Box-Curve ">
+                        <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Salads.png" alt="Salads" class=" Img-Curve ">
+                    </div>
+            </a>
+
+            <div class="Food-Menu-Desc Text-Center">
+                <h4>Salads</h4>
+
+
+            </div>
+            </div>
+
+            <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Non-Veg\Soup.html">
+                <div class="Food-Menu-Box">
+                    <div class="Box-2 Box-Curve">
+                        <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Soup.png" alt="Soups" class="Img-Curve">
+                    </div>
+            </a>
+
+            <div class="Food-Menu-Desc Text-Center">
+                <h4>Soups</h4>
+            </div>
+            </div>
+
+
+            <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Non-Veg\Starter.html">
+                <div class="Food-Menu-Box">
+                    <div class="Box-3 Box-Curve">
+                        <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Starters.png" alt="Starters" class="Img-Curve ">
+                    </div>
+            </a>
+
+            <div class="Food-Menu-Desc Text-Center">
+                <h4>Starters</h4>
+            </div>
+            </div>
+
+            <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Non-Veg\Rice.html">
+                <div class="Food-Menu-Box">
+                    <div class="Box-1 Box-Curve">
+                        <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Rice.jpeg" alt="Rice/Noodles" class="Img-Curve ">
+                    </div>
+            </a>
+
+            <div class="Food-Menu-Desc Text-Center">
+                <h4>Rice/Noodles</h4>
+            </div>
+            </div>
+
+
+            <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Non-Veg\Main-Course.html">
+                <div class="Food-Menu-Box">
+                    <div class="Box-2 Box-Curve">
+                        <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Main Course.png" alt="Main Course" class="Img-Curve ">
+                    </div>
+            </a>
+
+            <div class="Food-Menu-Desc Text-Center">
+                <h4>Main Course</h4>
+            </div>
+            </div>
+
+            <a href="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Indian.html">
+                <div class="Food-Menu-Box">
+                    <div class="Box-3 Box-Curve">
+                        <img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Indian Roti.png" alt="Indian Breads" class="Img-Curve ">
+                    </div>
+            </a>
+
+            <div class="Food-Menu-Desc Text-Center">
+                <h4>Indian Breads</h4>
+            </div>
+            </div>
+
+
+            <div class="clearfix"></div>
+
+
+
+        </div>
+    </section>
+    <!-- fOOD Menu Section Ends Here -->
+
+
+    <!--Social Media Section Starts Here-->
+    <section class="Social Media">
+        <div class="Container Text-Center">
+            <ul>
+                <li>
+                    <a href="#"><img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Facebook.png"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Instagram.png"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="D:\NMAMIT Notes\Project\4th Sem\Restaurant\Images\Threads.png" class="Img-Curve"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--Social Media Section Ends Here-->
+
+    <!--Footer Section Starts Here-->
+    <section class="Footer">
+        <div class="Container Text-Center">
+            <p>All rights reserved. Designed by <a href="#">Akshith Shetty</a><a href="#">G Rohan</a><a href="#">Keshav Nayak</a></p>
+        </div>
+    </section>
+    <!--Footer Section Ends Here-->
+
+</body>
+
+</html>
